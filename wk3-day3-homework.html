@@ -89,6 +89,55 @@
         var num = document.getElementById("half-input").value;
         halfNumber(num);
       });
+
+      /*third div*/
+      // Function to calculate the percentage of two numbers
+      function calculatePercentage(part, whole) {
+        var percentage = (part / whole) * 100;
+        document.getElementById("solution").innerHTML =
+          part + " is " + percentage.toFixed(2) + "% of " + whole;
+      }
+
+      // Get the percent-button element and add an event listener to it
+      var percentButton = document.getElementById("percent-button");
+      percentButton.addEventListener("click", function () {
+        var part = document.getElementById("percent1-input").value;
+        var whole = document.getElementById("percent2-input").value;
+        calculatePercentage(part, whole);
+      });
+
+      /*fouth div*/
+      // Function to round the number up to the nearest whole number
+      function roundUpNumber(num) {
+        var roundedNumber = Math.ceil(num); // Round up to the nearest integer
+        document.getElementById("solution").innerHTML =
+          "The nearest whole number of " + num + " is " + roundedNumber;
+      }
+
+      // Get the int-button element and add an event listener to it
+      var intButton = document.getElementById("int-button");
+      intButton.addEventListener("click", function () {
+        var num = document.getElementById("int-input").value;
+        roundUpNumber(num);
+      });
+
+      /*fifth div*/
+      // Function to calculate the area of a circle
+      function calculateArea(radius) {
+        var area = Math.PI * Math.pow(radius, 2); // π * r^2
+        document.getElementById("solution").innerHTML =
+          "The area of circle with radius " +
+          radius +
+          " is " +
+          area.toFixed(15);
+      }
+
+      // Get the area-button element and add an event listener to it
+      var areaButton = document.getElementById("area-button");
+      areaButton.addEventListener("click", function () {
+        var radius = document.getElementById("area-input").value;
+        calculateArea(radius);
+      });
     </script>
   </body>
 </html>
